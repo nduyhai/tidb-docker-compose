@@ -174,13 +174,13 @@ services:
 
   # monitors
   pushgateway:
-    image: prom/pushgateway:v0.3.1
+    image: prom/pushgateway
     command:
       - --log.level=error
     restart: on-failure
   prometheus:
     user: root
-    image: prom/prometheus:v2.2.1
+    image: prom/prometheus
     command:
       - --log.level=error
       - --storage.tsdb.path=/data/prometheus
@@ -195,7 +195,7 @@ services:
       - ./data:/data
     restart: on-failure
   grafana:
-    image: grafana/grafana:6.0.1
+    image: grafana/grafana
     user: "0"
     environment:
       GF_LOG_LEVEL: error
